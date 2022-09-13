@@ -16,6 +16,6 @@ public class DemoApplication {
 	@RequestMapping("/")
 	String sayHello() {
 		System.out.println("Hello world logs===>");
-		return "Hello  World logs !!!!!!!";
+		return "Hello  azure cloud World logs !!!!!!!";
 	}
 }
