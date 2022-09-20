@@ -38,7 +38,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: tjava3
+          name: java-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
