@@ -4,7 +4,7 @@
 name: Build and deploy JAR app to Azure Web App - tjava3
 
 on:
-  pull_request:
+  push:
     branches:
       - main
   workflow_dispatch:
