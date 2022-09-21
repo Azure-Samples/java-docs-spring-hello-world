@@ -11,8 +11,7 @@ on:
 env:
   WEBAPP_NAME: tjavagit1
   RESOURCE_GROUP: azuremigrateGarlan
-    SLOT_NAME:pr-${{ github.event.number }}
-
+    
       publish-profile:${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
 jobs:
   build:
@@ -46,7 +45,7 @@ jobs:
        #   name: java-app
 
       - name: Swap slots
-      run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
+         run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
 
      # - name: Deploy to Azure Web App
     #    id: deploy-to-webapp
