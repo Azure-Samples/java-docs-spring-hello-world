@@ -17,5 +17,6 @@ public class DemoApplication {
 	String sayHello() {
 		System.out.println("Hello world logs===>");
 		return "Hello  azure cloud World logs !!!!!!!";
+		System.out.println("pr request===>");
 	}
 }
