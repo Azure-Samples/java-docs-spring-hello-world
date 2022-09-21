@@ -50,7 +50,7 @@ jobs:
         with:
           app-name: 'tjavagit1'
           slot-name: 'staging'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_STAGE_PUBLISHPROFILE }}
           package: '*.jar'
                     
       - name: Comment on PR with the preview link
