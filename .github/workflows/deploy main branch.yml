@@ -10,7 +10,7 @@ on:
   
 env:
   WEBAPP_NAME: tjavagit1
-  RESOURCE_GROUP: azuremigrateGarlanpwd
+  RESOURCE_GROUP: azuremigrateGarlan
     SLOT_NAME: pr-${{ github.event.number }}
 
       publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
