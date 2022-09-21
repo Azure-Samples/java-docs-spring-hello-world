@@ -11,7 +11,7 @@ on:
 
 env:
   WEBAPP_NAME: tjavagit1
-  SLOT_NAME: pr-${{ github.event.number }}
+  SLOT_NAME: staging
 
 jobs:
   build:
