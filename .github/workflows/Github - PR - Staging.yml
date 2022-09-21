@@ -56,6 +56,6 @@ jobs:
       - name: Post result to PR
         uses: mshick/add-pr-comment@v1
         with:
-          message:  ## Preview link: https://${{ env.WEBAPP_NAME }}-${{env.SLOT_NAME }}.azurewebsites.net"
+          message:  Preview link https://${{ env.WEBAPP_NAME }}-${{env.SLOT_NAME }}.azurewebsites.net
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
