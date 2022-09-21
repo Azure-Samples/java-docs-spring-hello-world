@@ -1,0 +1,61 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Release to Production to Azure Web App 
+
+on:
+  push:
+    branches:
+      - main
+  
+env:
+  WEBAPP_NAME: tjavagit1
+  RESOURCE_GROUP: azuremigrateGarlanpwd
+    SLOT_NAME: pr-${{ github.event.number }}
+
+      publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
+
+  release to prod:
+    runs-on: ubuntu-latest
+    needs: build
+       
+    steps:
+      #- name: Download artifact from build job
+       # uses: actions/download-artifact@v2
+       # with:
+       #   name: java-app
+
+      - name: Swap slots
+      run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
+
+     # - name: Deploy to Azure Web App
+    #    id: deploy-to-webapp
+    #    uses: azure/webapps-deploy@v2
+    #    with:
+    #      app-name: 'tjavagit1'
+     #     slot-name: 'staging'
+     #     publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+     #     package: '*.jar'
+          
+          
+    
