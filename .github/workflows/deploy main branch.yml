@@ -45,7 +45,8 @@ jobs:
        #   name: java-app
 
       - name: Swap slots
-         run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
+        run: |
+         az webapp deployment slot swap -s staging -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
 
      # - name: Deploy to Azure Web App
     #    id: deploy-to-webapp
