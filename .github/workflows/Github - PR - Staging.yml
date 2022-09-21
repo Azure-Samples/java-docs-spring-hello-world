@@ -45,6 +45,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'tjavagit1'
-          slot-name: 'production'
+          slot-name: 'staging'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: '*.jar'
