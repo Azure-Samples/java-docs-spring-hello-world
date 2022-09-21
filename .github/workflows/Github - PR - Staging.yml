@@ -63,5 +63,4 @@ jobs:
           - Your changes have been deployed to the preview site. The preview site will update as you add more commits to this branch.
           - The preview link is shareable, but will be deleted when the pull request is merged or closed.
           > *This is an automated message.*
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
+     
