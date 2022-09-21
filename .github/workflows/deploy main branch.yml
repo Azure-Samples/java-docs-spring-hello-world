@@ -34,7 +34,7 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
 
-  release to prod:
+  release_to_prod:
     runs-on: ubuntu-latest
     needs: build
        
