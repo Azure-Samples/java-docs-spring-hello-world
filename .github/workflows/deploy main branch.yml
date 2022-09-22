@@ -47,7 +47,15 @@ jobs:
       - name: Swap slots
         run: az webapp deployment slot swap -s staging -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
 
-     
+  delete-slot:
+    runs-on: ubuntu-latest
+    needs: release_to_prod  
+    
+    steps:
+    
+      - name: Delete slot on staging site
+        run: az webapp deployment slot delete --resource-group $RESOURCE_GROUP  --name $WEBAPP_NAME --slot staging
+
           
           
     
