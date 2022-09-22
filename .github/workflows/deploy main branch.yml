@@ -39,23 +39,16 @@ jobs:
     needs: build
        
     steps:
-      #- name: Download artifact from build job
-       # uses: actions/download-artifact@v2
-       # with:
-       #   name: java-app
-
+      - name: Az login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
       - name: Swap slots
         run: |
          az webapp deployment slot swap -s staging -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
 
-     # - name: Deploy to Azure Web App
-    #    id: deploy-to-webapp
-    #    uses: azure/webapps-deploy@v2
-    #    with:
-    #      app-name: 'tjavagit1'
-     #     slot-name: 'staging'
-     #     publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-     #     package: '*.jar'
+     
           
           
     
