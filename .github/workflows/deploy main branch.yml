@@ -56,6 +56,12 @@ jobs:
       - name: Delete slot on staging site
         run: az webapp deployment slot delete --resource-group $RESOURCE_GROUP  --name $WEBAPP_NAME --slot staging
 
+      - name: Close Pull
+        uses: peter-evans/close-pull@v2
+        with:
+          pull-request-number: $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+          comment: Auto-closing pull request
+          delete-branch: true
           
           
     
