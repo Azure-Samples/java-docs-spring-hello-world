@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  WEBAPP_NAME: javagit5
+  WEBAPP_NAME: java5git
   SLOT_NAME: staging
 
 jobs:
