@@ -9,7 +9,7 @@ on:
       - main
   
 env:
-  WEBAPP_NAME: tjavagit1
+  WEBAPP_NAME: javagit5
   RESOURCE_GROUP: azuremigrateGarlan
     
       publish-profile:${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
