@@ -50,12 +50,13 @@ jobs:
 #      - name: Delete slot on staging site
 #        run: az webapp deployment slot delete --resource-group azuremigrateGarlan  --name java5git --slot staging
 
-      - name: Close Pull
-        uses: peter-evans/close-pull@v2
-        with:
-          pull-request-number: $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-          comment: Auto-closing pull request
-          delete-branch: true
-          
+#      - name: Close Pull
+#        uses: peter-evans/close-pull@v2
+#        with:
+#          pull-request-number: $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+#          comment: Auto-closing pull request
+#          delete-branch: true
+      - name: Install delete branch
+        run:  brew install git-delete-merged-branches
           
     
