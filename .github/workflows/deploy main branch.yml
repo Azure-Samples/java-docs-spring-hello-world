@@ -47,8 +47,8 @@ jobs:
       - name: Swap slots
         run: az webapp deployment slot swap -s staging -n java5git -g azuremigrateGarlan
     
-      - name: Delete slot on staging site
-        run: az webapp deployment slot delete --resource-group azuremigrateGarlan  --name java5git --slot staging
+#      - name: Delete slot on staging site
+#        run: az webapp deployment slot delete --resource-group azuremigrateGarlan  --name java5git --slot staging
 
       - name: Close Pull
         uses: peter-evans/close-pull@v2
