@@ -45,7 +45,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
         
       - name: Swap slots
-        run: az webapp deployment slot swap -s staging -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
+        run: az webapp deployment slot swap -s staging -n java5git -g azuremigrateGarlan
 
   delete-slot:
     runs-on: ubuntu-latest
