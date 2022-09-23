@@ -54,7 +54,7 @@ jobs:
     steps:
     
       - name: Delete slot on staging site
-        run: az webapp deployment slot delete --resource-group $RESOURCE_GROUP  --name $WEBAPP_NAME --slot staging
+        run: az webapp deployment slot delete --resource-group azuremigrateGarlan  --name java5git --slot staging
 
       - name: Close Pull
         uses: peter-evans/close-pull@v2
