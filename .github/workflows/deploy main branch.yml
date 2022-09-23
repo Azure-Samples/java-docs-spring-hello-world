@@ -57,6 +57,9 @@ jobs:
 #          comment: Auto-closing pull request
 #          delete-branch: true
       - name: Install delete branch
-        run:  brew install git-delete-merged-branches
+        run:  brew install git-delete-merged-branches |  git-delete-merged-branches
+        
+        
+        
           
     
