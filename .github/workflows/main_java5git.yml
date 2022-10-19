@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'java5git'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_363C5223710C488BA5E83E9CFA688A3E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A69C8C04D1347DAA860A85E351CC6C3 }}
           package: '*.jar'
