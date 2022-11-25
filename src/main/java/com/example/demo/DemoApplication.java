@@ -36,7 +36,12 @@ public class DemoApplication extends SpringBootServletInitializer {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	WebServlet Login;
+	@RestController
+	public class HelloController {
+		@getMapping("/Index")
+    	public String index() {
+        	return "Welcome to OMS";
+    }
 }
 
 @WebServlet("/Login")
