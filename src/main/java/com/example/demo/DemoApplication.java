@@ -43,7 +43,6 @@ public class DemoApplication extends SpringBootServletInitializer {
     	public String index() {
         	return "Welcome to OMS";
     }
-}
 
 @WebServlet("/Login")
 class OMS extends HttpServlet{
@@ -126,3 +125,4 @@ class OMS extends HttpServlet{
 	}
 
 }
+	}
