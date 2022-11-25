@@ -21,6 +21,7 @@ import Entity.Sponsor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +31,7 @@ import com.example.demo.Dao.SponsorDao;
 
 @SpringBootApplication
 @RestController
-@ComponentScan(basepackages="com.example")
+@ComponentScan(basePackages="com.example")
 public class DemoApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
