@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'orphanagemanagementsystem'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7D81F76C75654F8ABEA587C009773799 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_41A35A09DCD6418387B7579B4B004A7E }}
           package: '*.war'
