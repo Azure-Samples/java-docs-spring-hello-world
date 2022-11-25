@@ -38,7 +38,7 @@ public class DemoApplication extends SpringBootServletInitializer {
 
 	@RestController
 	public class HelloController {
-		@getMapping("/Index")
+		@RequestMapping("/Index")
     	public String index() {
         	return "Welcome to OMS";
     }
