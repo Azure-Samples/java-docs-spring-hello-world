@@ -55,5 +55,5 @@ jobs:
           app-name: 'Kaaadem'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F9AD67A4DD6D4A6F94E456C71AE17AAB }}
-          package: '*.war'
+
 
