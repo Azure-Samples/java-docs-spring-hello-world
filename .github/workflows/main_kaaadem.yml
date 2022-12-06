@@ -24,8 +24,10 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
+      - name: Download workflow artifact
+        uses: dawidd6/action-download-artifact@v2.24.2
+        continue-on-error: true
+
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.war'
