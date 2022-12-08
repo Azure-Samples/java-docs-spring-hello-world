@@ -12,7 +12,6 @@
 
 # Package Files #
 *.jar
-*.war
 *.nar
 *.ear
 *.zip
@@ -21,3 +20,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.project
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+target/classes/application.properties
+target/classes/META-INF/maven/com.example/java-docs-spring-hello-world/pom.properties
+target/classes/META-INF/maven/com.example/java-docs-spring-hello-world/pom.xml
+.classpath
