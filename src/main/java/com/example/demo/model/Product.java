@@ -1,4 +1,4 @@
-package net.javaguides.springboot.model;
+package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
