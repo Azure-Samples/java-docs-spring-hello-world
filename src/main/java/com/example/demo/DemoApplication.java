@@ -21,4 +21,9 @@ public class DemoApplication {
 	String sayHello() {
 		return "Hello World, This is Azure talking to U!";
 	}
+
+	@RequestMapping("/")
+	String sayYes() {
+		return " The sum of a and b is 30 ";
+	}
 }
