@@ -13,7 +13,7 @@ public class DemoApplication {
 		//int a = 10;
 		//int b = 20;
 		//int c = a + b;
-		//System.out.println("The sum of a and b is " + c);
+		System.out.println("The sum of a and b is 30");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
