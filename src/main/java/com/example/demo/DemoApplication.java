@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoApplication {
 
 	public static void main(String[] args) {
+		//int a = 10;
+		//int b = 20;
+		//int c = a + b;
+		System.out.println("The sum of a and b is 30");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
 	@RequestMapping("/")
 	String sayHello() {
-		return "Hello World!";
+		return "Hello World, This is the code from Test branch!";
 	}
 }
