@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'wep-app-2'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_85C1FE0B415748D7B931801F9272EA41 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0730A2D03EAD4A198A9143CC98B9A489 }}
           package: '*.jar'
