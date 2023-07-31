@@ -13,8 +13,8 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 		Properties properties = new Properties();
-		Try{
-		Connection connection = DriverManager.getConnection(
+		try{
+		Connection connection = DriverManager.getConnection
 			("jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit","dbadmin@pricedb07", "Admin123");
 	
 		} catch(Exception e){
