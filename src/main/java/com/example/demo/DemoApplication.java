@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.*;
+import java.util.*;
 
 @SpringBootApplication
 @RestController
@@ -18,7 +19,7 @@ public class DemoApplication {
 			("jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit","dbadmin@pricedb07", "Admin123");
 	
 		} catch(Exception e){
-			system.out.println("connection established hopefully");
+			System.out.println("connection established hopefully");
 		}
 	}
 	@RequestMapping("/")
