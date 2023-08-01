@@ -22,6 +22,7 @@ public class DemoApplication {
                 "jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit;user=dbadmin@pricedb07;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 		String query = "Select * from First where col1='Name1'";
 		String result = new String();
+		result = " code did not work"
 		try{
 		Connection connection = DriverManager.getConnection(connectionUrl);
 		Statement statement = connection.createStatement();
@@ -33,7 +34,7 @@ public class DemoApplication {
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
 		}
-		return "Hello Shankar!" + result;
+		return "Hello Shankar" + result;
 		
 	}
 }
