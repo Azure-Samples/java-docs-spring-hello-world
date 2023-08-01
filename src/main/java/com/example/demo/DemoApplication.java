@@ -29,7 +29,7 @@ public class DemoApplication {
 		Statement statement = connection.createStatement();
 		
 		ResultSet resultSet = statement.executeQuery(query);
-
+		resultSet.next();
 		result = resultSet.getString(1);
 		System.out.println(result);
 	
