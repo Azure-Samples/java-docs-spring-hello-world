@@ -27,7 +27,7 @@ public class DemoApplication {
 		
 		ResultSet resultSet = statement.executeQuery(query);
 
-		String result = resultSet.getString();
+		String result = resultSet.getString(1);
 	
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
