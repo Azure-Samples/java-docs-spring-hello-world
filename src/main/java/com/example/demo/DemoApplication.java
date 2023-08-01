@@ -25,11 +25,13 @@ public class DemoApplication {
 		result = " code did not work";
 		try{
 		Connection connection = DriverManager.getConnection(connectionUrl);
+		System.out.println(connection.toString());
 		Statement statement = connection.createStatement();
 		
 		ResultSet resultSet = statement.executeQuery(query);
 
 		result = resultSet.getString(1);
+		System.out.println(result);
 	
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
