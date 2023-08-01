@@ -35,6 +35,7 @@ public class DemoApplication {
 	
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
+			e.printStackTrace();
 		}
 		return "Hello Shankar jdbc" + result;
 		
