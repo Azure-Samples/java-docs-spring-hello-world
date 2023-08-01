@@ -21,13 +21,14 @@ public class DemoApplication {
 		String connectionUrl =
                 "jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit;user=dbadmin@pricedb07;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 		String query = "Select * from First where col1='Name1'";
+		String result;
 		try{
 		Connection connection = DriverManager.getConnection(connectionUrl);
 		Statement statement = connection.createStatement();
 		
 		ResultSet resultSet = statement.executeQuery(query);
 
-		String result = resultSet.getString(1);
+		result = resultSet.getString(1);
 	
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
