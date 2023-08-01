@@ -13,18 +13,26 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		Properties properties = new Properties();
+		
+		
+	}
+	@RequestMapping("/")
+	String sayHello() {
+		String connectionUrl =
+                "jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit;user=dbadmin@pricedb07;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+		String query = "Select * from First where col1='Name1'"
 		try{
-		Connection connection = DriverManager.getConnection
-			("jdbc:sqlserver://pricedb07.database.windows.net:1433;database=Priceit","dbadmin@pricedb07", "Admin123");
+		Connection connection = DriverManager.getConnection(connectionUrl);
+		Statement statement = connection.createStatement();
+		
+		ResultSet resultSet = statement.executeQuery(query);
+
+		String result = resultSet.getString();
 	
 		} catch(Exception e){
 			System.out.println("connection established hopefully");
 		}
-	}
-	@RequestMapping("/")
-	String sayHello() {
-		return "Hello Shankar!";
+		return "Hello Shankar!" + result;
 		
 	}
 }
