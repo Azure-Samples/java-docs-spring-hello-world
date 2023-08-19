@@ -1,8 +1,8 @@
-name: Java CI with Maven
+#name: Java CI with Maven
 
 #on: [push]
 
-jobs:
+#jobs:
   build:
 
     runs-on: ubuntu-latest
