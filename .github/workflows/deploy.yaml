@@ -54,6 +54,28 @@ jobs:
     needs: build-and-push-image
     runs-on: ubuntu-latest
     steps:
+    - name: Configure image registry
+      uses: Azure/appservice-settings@v1
+      with:
+        app-name: app-service-demo-java
+        app-settings-json: |
+          [
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                  "value": "${{ secrets.REGISTRY_PASSWORD }}",
+                  "slotSetting": false
+              },
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_URL",
+                  "value": "https://ghcr.io",
+                  "slotSetting": false
+              },
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                  "value": "${{ secrets.REGISTRY_USERNAME  }}",
+                  "slotSetting": false
+              }
+          ]
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
       with:
