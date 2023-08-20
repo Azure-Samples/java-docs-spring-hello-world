@@ -2,7 +2,8 @@ name: CICD
 
 # Configures this workflow to run every time a change is pushed to the branch called `main`.
 on:
-  push
+  push:
+    branches: ['main']
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -59,6 +60,7 @@ jobs:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
     - name: Configure image registry and container port
       uses: Azure/appservice-settings@v1
+      # available settings are listed at https://learn.microsoft.com/fr-fr/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#custom-containers
       with:
         app-name: app-service-demo-java
         app-settings-json: |
