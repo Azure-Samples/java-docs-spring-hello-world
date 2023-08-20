@@ -57,7 +57,7 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-    - name: Configure image registry
+    - name: Configure image registry and container port
       uses: Azure/appservice-settings@v1
       with:
         app-name: app-service-demo-java
@@ -76,6 +76,11 @@ jobs:
               {
                   "name": "DOCKER_REGISTRY_SERVER_USERNAME",
                   "value": "${{ secrets.REGISTRY_USERNAME  }}",
+                  "slotSetting": false
+              },
+              {
+                  "name": "WEBSITES_PORT",
+                  "value": "8080",
                   "slotSetting": false
               }
           ]
