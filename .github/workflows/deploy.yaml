@@ -54,6 +54,9 @@ jobs:
     needs: build-and-push-image
     runs-on: ubuntu-latest
     steps:
+    - uses: azure/login@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
     - name: Configure image registry
       uses: Azure/appservice-settings@v1
       with:
