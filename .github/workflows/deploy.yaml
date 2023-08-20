@@ -2,8 +2,7 @@ name: CICD
 
 # Configures this workflow to run every time a change is pushed to the branch called `main`.
 on:
-  push:
-    branches: ['main']
+  push
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -54,18 +53,28 @@ jobs:
   deploy:
     needs: build-and-push-image
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v1
+    - name: Azure WebApp
+      uses: Azure/webapps-deploy@v2
       with:
-        java-version: 11
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-#    - name: Azure WebApp
-#      uses: Azure/webapps-deploy@v2
-#      with:
-#        app-name: app-service-demo-java
-#        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-#        package: target/*.jar
+        app-name: app-service-demo-java
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: ghcr.io/julien-sarik/demo-azure-app-service:main
+        app-settings-json: |
+          [
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                  "value": "${{ secrets.REGISTRY_PASSWORD }}",
+                  "slotSetting": false
+              },
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_URL",
+                  "value": "https://ghcr.io",
+                  "slotSetting": false
+              },
+              {
+                  "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                  "value": "${{ secrets.REGISTRY_USERNAME  }}",
+                  "slotSetting": false
+              }
+          ]
