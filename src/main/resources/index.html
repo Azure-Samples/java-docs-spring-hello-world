@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>上传简历</title>
 </head>
+<<<<<<< HEAD
 <input type="file" id="fileInput">
 <button id="uploadButton">Upload</button>
 <div id="result"></div>
@@ -29,4 +30,15 @@
         }
     });
 </script>
+=======
+<body>
+<h2>上传简历</h2>
+<form action="/yuhuijing.azurewebsites.net" method="post" enctype="multipart/form-data">
+    <label for="resume">选择简历：</label>
+    <input type="file" name="resume" id="resume">
+    <br><br>
+    <input type="submit" value="上传">
+</form>
+</body>
+>>>>>>> 26b63349c37a4846701af49628405574f152b56a
 </html>
