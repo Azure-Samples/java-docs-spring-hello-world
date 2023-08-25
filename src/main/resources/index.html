@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload</title>
+    <meta charset="UTF-8">
+    <title>上传简历</title>
 </head>
 <body>
-<input type="file" id="fileInput">
-<button id="uploadButton">Upload</button>
-<div id="result"></div>
-
-<script>
-    document.getElementById('uploadButton').addEventListener('click', async function() {
-        const fileInput = document.getElementById('fileInput');
-        const file = fileInput.files[0];
-
-        const formData = new FormData();
-        formData.append('file', file);
-
-        const response = await fetch('https://yuhuijing01.azurewebsites.net/', {
-            method: 'POST',
-            body: formData
-        });
-
-        const resultDiv = document.getElementById('result');
-        if (response.ok) {
-            resultDiv.textContent = 'File uploaded successfully.';
-        } else {
-            resultDiv.textContent = 'Error uploading file.';
-        }
-    });
-</script>
+<h2>上传简历</h2>
+<form action="/yuhuijing.azurewebsites.net" method="post" enctype="multipart/form-data">
+    <label for="resume">选择简历：</label>
+    <input type="file" name="resume" id="resume">
+    <br><br>
+    <input type="submit" value="上传">
+</form>
 </body>
 </html>

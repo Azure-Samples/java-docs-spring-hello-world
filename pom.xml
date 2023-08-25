@@ -23,15 +23,24 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-storage</artifactId>
+			<version>6.1.0</version>
+		</dependency>
+			<!-- 其他依赖 ... -->
+			<dependency>
+				<groupId>com.azure</groupId>
+				<artifactId>azure-storage-blob</artifactId>
+				<version>12.13.0</version>
+			</dependency>
+
 	</dependencies>
 
 	<build>
