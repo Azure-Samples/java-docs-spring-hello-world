@@ -2,8 +2,9 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @SpringBootApplication
 @RestController
@@ -17,7 +18,6 @@ public class DemoApplication {
 	// String sayHello() {
 	// 	return "Hello Azure!!";
 	// }
-
 
 	@GetMapping("/")
 	public String index() {
